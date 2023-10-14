@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -45,7 +46,15 @@ public class Main {
         int numeroDeVeiculos = tiposCaminhoes.size();
 
 
-    }
+        //exibir o relatório
+        System.out.println("Relatório de Transporte:");
+        System.out.println("Custo Total: R$" + custo);
+        System.out.println("Custo por Trecho: R$" + custoPorTrecho);
+        System.out.println("Custo Médio por Km: R$" + custoMedioPorKm);
+        System.out.println("Custo Total por Trecho: R$" + custoTotalPorTrecho);
+
+
+        }
 
     static ArrayList<Produtos> SelecionarProdutos() {
         Scanner scanner = new Scanner(System.in);
