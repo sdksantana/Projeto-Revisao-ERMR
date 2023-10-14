@@ -1,4 +1,7 @@
 package org.calculador.de.frete;
+
+
+
 public class Caminhoes {
     String tipo;
     double precoKM;

@@ -40,6 +40,9 @@ public class Main {
         //Metodos para dados estatisticos (Não foi utilizado o stream pq ao add o array de caminhões quebrou o cod inteiro)
         double custoPorTrecho = custo / 2;
         double custoMedioPorKm = custo / distancia;
+        double custoTotalPorTrecho = custoPorTrecho * 2;
+        int numeroDeItensTransportados = produtosSelecionados.size();
+        int numeroDeVeiculos = tiposCaminhoes.size();
 
 
     }
