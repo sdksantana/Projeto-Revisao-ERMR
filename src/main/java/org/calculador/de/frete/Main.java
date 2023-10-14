@@ -52,9 +52,9 @@ public class Main {
         System.out.println("Custo por Trecho: R$" + custoPorTrecho);
         System.out.println("Custo Médio por Km: R$" + custoMedioPorKm);
         System.out.println("Custo Total por Trecho: R$" + custoTotalPorTrecho);
-
-
-        }
+        System.out.println("Número Total de Itens Transportados: " + numeroDeItensTransportados);
+        System.out.println("Número Total de veículos deslocados:" + numeroDeVeiculos);
+    }
 
     static ArrayList<Produtos> SelecionarProdutos() {
         Scanner scanner = new Scanner(System.in);
