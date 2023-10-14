@@ -1,0 +1,32 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+ # Arquivos temporários gerados pelo IDE (por exemplo, IntelliJ IDEA ou Eclipse)
+ .idea/
+
+ # Arquivos compilados e bytecode
+ *.class
+
+ # Diretórios de saída de compilação
+ bin/
+ target/
+
+ # Arquivos de log
+ *.log
+
+ # Arquivos de configuração do Maven (se estiver usando Maven)
+ pom.xml.tag
+ pom.xml.releaseBackup
+ pom.xml.versionsBackup
+ pom.xml.next
+ release.properties
+ dependency-reduced-pom.xml
+ buildNumber.properties
+
+ # Arquivos de configuração do Gradle (se estiver usando Gradle)
+ .gradle/
+ build/
+
+ # Diretório de saída do IntelliJ IDEA
+ out/
+ distancia.csv
