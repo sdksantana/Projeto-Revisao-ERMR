@@ -1,9 +1,11 @@
 package org.calculador.de.frete;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,6 +36,12 @@ public class Main {
 
         System.out.println("O melhor modelo de caminhão para a entrega é: " + SelecionarCaminhao(pesoTotal, tiposCaminhoes));
         System.out.println("Custo do transporte: R$" + custo);
+
+        //Metodos para dados estatisticos (Não foi utilizado o stream pq ao add o array de caminhões quebrou o cod inteiro)
+        double custoPorTrecho = custo / 2;
+        double custoMedioPorKm = custo / distancia;
+
+
     }
 
     static ArrayList<Produtos> SelecionarProdutos() {
@@ -51,6 +59,7 @@ public class Main {
         ArrayList<Produtos> produtosSelecionados = new ArrayList<>();
         System.out.println("Escolha a quantidade de produtos que deseja transportar:");
         int quantidade = scanner.nextInt();
+
 
         for (int i = 0; i < quantidade; i++) {
             System.out.println("Selecione o produto:");
@@ -120,14 +129,16 @@ public class Main {
                     NintendoS.setPeso(NintendoS.getPeso() * quantidadeNintendoS);
                     produtosSelecionados.add(NintendoS);
                     break;
-
+                case 9:
+                    System.exit(24);
                 default:
-                    if (escolhaProduto != 0){
+                    if (escolhaProduto != 0) {
                         System.out.println("Opção de produto inválida.");
                     }
                     break;
             }
-        } return produtosSelecionados;
+        }
+        return produtosSelecionados;
 
     }
 
@@ -159,6 +170,7 @@ public class Main {
         System.out.println("[21] SAO PAULO");
         System.out.println("[22] TERESINA");
         System.out.println("[23] VITORIA");
+        System.out.println("[24] ------Digite o numero 9 para encerrar a operação a qualquer momento----");
 
         int cidade = scanner.nextInt();
 
@@ -243,4 +255,6 @@ public class Main {
         }
         return pesoTotal;
     }
+
+
 }
