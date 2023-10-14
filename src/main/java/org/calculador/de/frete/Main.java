@@ -1,5 +1,4 @@
-package com.github.calculadordefrete;
-
+package org.calculador.de.frete;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
