@@ -37,7 +37,7 @@ public class Main {
         System.out.println("O melhor modelo de caminhão para a entrega é: " + SelecionarCaminhao(pesoTotal, tiposCaminhoes));
         System.out.println("Custo do transporte: R$" + custo);
 
-        //Metodos para dados estatisticos (Não foi utilizado o stream pq ao add o array de caminhões quebrou o cod inteiro)
+        //Metodos para dados estatisticos (Não foi utilizado o stream, porque ao adicionar o array de caminhões, quebrou o código)
         double custoPorTrecho = custo / 2;
         double custoMedioPorKm = custo / distancia;
         double custoTotalPorTrecho = custoPorTrecho * 2;
