@@ -37,7 +37,7 @@ public class Main {
         System.out.println("O melhor modelo de caminhão para a entrega é: " + SelecionarCaminhao(pesoTotal, tiposCaminhoes));
         System.out.println("Custo do transporte: R$" + custo);
 
-        //Metodos para dados estatisticos (Não foi utilizado o stream, porque ao adicionar o array de caminhões, quebrou o código)
+        // Metodos para dados estatisticos (Não foi utilizado o stream, porque ao adicionar o array de caminhões, quebrou o código)
         double custoPorTrecho = custo / 2;
         double custoMedioPorKm = custo / distancia;
         double custoTotalPorTrecho = custoPorTrecho * 2;
@@ -45,7 +45,7 @@ public class Main {
         int numeroDeVeiculos = tiposCaminhoes.size();
 
 
-        //exibir o relatório
+        // Exibir o relatório
         System.out.println("Relatório de Transporte:");
         System.out.println("Custo Total: R$" + custo);
         System.out.println("Custo por Trecho: R$" + custoPorTrecho);
@@ -54,6 +54,7 @@ public class Main {
         System.out.println("Número Total de Itens Transportados: " + numeroDeItensTransportados);
         System.out.println("Número Total de veículos deslocados:" + numeroDeVeiculos);
     }
+
 
     static ArrayList<Produtos> SelecionarProdutos() {
         Scanner scanner = new Scanner(System.in);
@@ -73,16 +74,20 @@ public class Main {
 
 
         for (int i = 0; i < quantidade; i++) {
+            System.out.println("(Se deseja encerrar o programa, digite [9] a qualquer momento.)");
             System.out.println("Selecione o produto:");
             for (int j = 0; j < produtosLoja.size(); j++) {
                 Produtos produto = produtosLoja.get(j);
                 System.out.println("[" + (j + 1) + "] " + produto.getNome() + " (" + produto.getPeso() + "kg)");
+
             }
+
             int escolhaProduto = scanner.nextInt();
+
 
             switch (escolhaProduto) {
                 case 0:
-                    //Sair do loop
+                    // Sair do loop
                     break;
                 case 1:
                     System.out.println("Digite a quantidade de Celulares:");
@@ -141,21 +146,24 @@ public class Main {
                     produtosSelecionados.add(NintendoS);
                     break;
                 case 9:
-                    System.exit(24);
+                    System.out.println("Encerrando o programa...");
+                    System.exit(0);
+                    break;
                 default:
                     if (escolhaProduto != 0) {
                         System.out.println("Opção de produto inválida.");
                     }
                     break;
             }
+
         }
         return produtosSelecionados;
+
 
     }
 
     static int RetornaCidade() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Escolha a cidade de origem:");
 
         System.out.println("[0] ARACAJU");
         System.out.println("[1] BELEM");
@@ -181,7 +189,7 @@ public class Main {
         System.out.println("[21] SAO PAULO");
         System.out.println("[22] TERESINA");
         System.out.println("[23] VITORIA");
-        System.out.println("[24] ------Digite o numero 9 para encerrar a operação a qualquer momento----");
+
 
         int cidade = scanner.nextInt();
 
@@ -266,6 +274,5 @@ public class Main {
         }
         return pesoTotal;
     }
-
 
 }
