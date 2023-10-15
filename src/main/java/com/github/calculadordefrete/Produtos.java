@@ -1,4 +1,4 @@
-package org.calculador.de.frete;
+package com.github.calculadordefrete;
 public class Produtos {
     String nome;
     double peso;

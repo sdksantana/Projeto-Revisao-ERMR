@@ -1,4 +1,4 @@
-package org.calculador.de.frete;
+package com.github.calculadordefrete;
 
 
 
