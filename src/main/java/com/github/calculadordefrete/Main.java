@@ -72,9 +72,26 @@ public class Main {
         System.out.println("Escolha a quantidade de produtos que deseja transportar:");
         int quantidade = scanner.nextInt();
 
+        Thread exitThread = new Thread(() -> {
+            while (true) {
+                try {
+                    if (System.in.available() > 0) {
+                        char inputChar = (char) System.in.read();
+                        if (inputChar == 'q' || inputChar == 'Q') {
+                            System.out.println("Programa encerrado pelo usuário.");
+                            System.exit(0);
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        exitThread.setDaemon(true);
+        exitThread.start();
 
         for (int i = 0; i < quantidade; i++) {
-            System.out.println("(Se deseja encerrar o programa, digite [9] a qualquer momento.)");
+            System.out.println("(Se deseja encerrar o programa, digite [24] a qualquer momento.)");
             System.out.println("Selecione o produto:");
             for (int j = 0; j < produtosLoja.size(); j++) {
                 Produtos produto = produtosLoja.get(j);
@@ -145,7 +162,7 @@ public class Main {
                     NintendoS.setPeso(NintendoS.getPeso() * quantidadeNintendoS);
                     produtosSelecionados.add(NintendoS);
                     break;
-                case 9:
+                case 24:
                     System.out.println("Encerrando o programa...");
                     System.exit(0);
                     break;
