@@ -181,7 +181,7 @@ public class Main {
 
     static int RetornaCidade() {
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("(Se deseja encerrar o programa, digite [24] a qualquer momento.)");
         System.out.println("[0] ARACAJU");
         System.out.println("[1] BELEM");
         System.out.println("[2] BELO HORIZONTE");
@@ -209,23 +209,30 @@ public class Main {
 
 
         int cidade = scanner.nextInt();
+        if (cidade == 24) {
+            System.out.println("Encerrando o programa...");
+            System.exit(0);
+        }
+
 
         return cidade;
     }
+
 
     static String getCidadeNome(int cidade) {
         String[] cidades = {
                 "ARACAJU", "BELEM", "BELO HORIZONTE", "BRASILIA", "CAMPO GRANDE", "CUIABA", "CURITIBA", "FLORIANOPOLIS",
                 "FORTALEZA", "GOIANIA", "JOAO PESSOA", "MACEIO", "MANAUS", "NATAL", "PORTO ALEGRE", "PORTO VELHO",
-                "RECIFE", "RIO BRANCO", "RIO DE JANEIRO", "SALVADOR", "SAO LUIS", "SAO PAULO", "TERESINA", "VITORIA"
+                "RECIFE", "RIO BRANCO", "RIO DE JANEIRO", "SALVADOR", "SAO LUIS", "SAO PAULO", "TERESINA", "VITORIA, 24"
         };
 
         if (cidade >= 0 && cidade < cidades.length) {
             return cidades[cidade];
-        } else {
-            return "Cidade inválida";
+            } else {
+                return "Cidade inválida";
+            }
+
         }
-    }
 
     static String SelecionarCaminhao(double pesoTotal, ArrayList<Caminhoes> tiposCaminhoes) {
         String modeloCaminhao = "";
